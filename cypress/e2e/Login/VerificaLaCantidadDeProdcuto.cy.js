@@ -18,6 +18,8 @@ describe("Verificar Productos", () => {
         cy.get("input[name='quantity']").clear().type("5")
         cy.get("[type='button']").click()
         cy.contains("View Cart").click()
+
+        cy.get(".disabled").should("have.text", "5")
     })
 
 })
