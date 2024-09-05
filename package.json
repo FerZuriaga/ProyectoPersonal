@@ -1,0 +1,20 @@
+{
+  "name": "proyectofer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "Abrir": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.14.1",
+    "cypress-plugin-xhr-toggle": "^1.2.1"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8",
+    "cypress-plugin-tab": "^1.0.5"
+  }
+}
