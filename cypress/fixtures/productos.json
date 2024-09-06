@@ -1,0 +1,23 @@
+{
+    "Productos": [
+        {
+            "nombre": "Madame Top For Women",
+            "Precio": "1000"
+        },
+
+        {
+            "nombre": "Fancy Green Top",
+            "Precio": "700"
+        },
+
+        {
+            "nombre": "Sleeves Printed Top - White",
+            "Precio": "499"
+        },
+
+        {
+            "nombre": "Frozen Tops For Kids",
+            "Precio": "278"
+        }
+    ]
+  }

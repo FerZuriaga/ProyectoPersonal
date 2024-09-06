@@ -48,9 +48,6 @@ describe("Registro a medida que pago", () => {
                 precioTotal = parseFloat(precioTotal)
 
 
-
-
-
                  let sumaTotalPrecios = 0
 
                  sumaTotalPrecios =precios.reduce((acumulador, valorActual) => acumulador + valorActual, 0)
