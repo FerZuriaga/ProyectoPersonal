@@ -1,5 +1,9 @@
 /// <reference types="Cypress" />
 
+// import LoginPage from "../Login/pageObjects/loginPage";
+// import productosPage from "./pageObjects/productosPage";
+// import cartPage from "./pageObjects/cartPage";
+
 let productosABuscar;
 
 describe("Registro a medida que pago", () => {
@@ -13,14 +17,15 @@ describe("Registro a medida que pago", () => {
 
         })
 
-
-
     })
-
 
     it("Pagar", () => {
 
-        cy.Login("pedrillo@gmail.com", "holapaola")
+        const email = Cypress.env("email");
+
+        const password = Cypress.env("password")
+        cy.Login(email, password)
+
         cy.log(productosABuscar)
 
         //productosABuscar.forEach(producto =>
@@ -98,11 +103,11 @@ describe("Registro a medida que pago", () => {
         cy.get(':nth-child(7) > .btn').click()
 
         cy.get("[name='name_on_card']").type("Galicia")
-         cy.get("[name='card_number']").type("213023102312")
-         cy.get("[name='cvc']").type("300")
-         cy.get("[name='expiry_month']").type("07")
-         cy.get("[data-qa='expiry-year']").type("2040")
-          cy.get("[data-qa='pay-button']").click()
+        cy.get("[name='card_number']").type("213023102312")
+        cy.get("[name='cvc']").type("300")
+        cy.get("[name='expiry_month']").type("07")
+        cy.get("[data-qa='expiry-year']").type("2040")
+        cy.get("[data-qa='pay-button']").click()
 
 
     })
@@ -110,3 +115,32 @@ describe("Registro a medida que pago", () => {
 
 })
 
+// let productosABuscar
+
+// describe("Registro a medida que pago", () => {
+
+//     const loginPage = new LoginPage()
+//     before(() => {
+//         cy.visit("https://www.automationexercise.com")
+//         cy.title().should("contain", "Automation Exercise")
+
+//         cy.fixture("productos").then(function (dato) {
+//             productosABuscar = dato.productosABuscar
+//         })
+//     })
+
+//     it("Pagar", () => {
+//         const email = Cypress.env("email")
+//         const password = Cypress.env ("password")
+
+//         loginPage.login(email,password)
+
+//         productosPage.buscarProducto(productosABuscar)
+
+//         cy.contains("Cart").click()
+//         cartPage.verificarPrecios()
+
+//         cartPage.realizarPago()
+//     })
+
+// })

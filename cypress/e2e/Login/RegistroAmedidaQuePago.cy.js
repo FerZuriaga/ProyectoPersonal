@@ -12,7 +12,15 @@ describe("Registro a medida que pago", () => {
 
 
     it("Pagar", () => {
-        cy.Login("pedrillo@gmail.com", "holapaola")
+
+        const email = Cypress.env("email");
+        
+        const password = Cypress.env("password")
+        
+
+        cy.Login(email, password)
+
+
 
         //const indicesProductos = [3,4,5]
         //const productos = cy.get(".product-image-wrapper")

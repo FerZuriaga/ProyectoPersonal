@@ -12,7 +12,10 @@ describe("Seccion Login", () => {
 
 
     it("Logear en la pagina", () => {
-        cy.Login("pedrillo@gmail.com", "holapaola")
+        const email = Cypress.env("email");
+        const password = Cypress.env("password")
+        
+        cy.Login(email, password)
 
 
         for (let x = 0; x < 2; x++) {

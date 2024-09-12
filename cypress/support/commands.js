@@ -38,6 +38,9 @@ Cypress.Commands.add("Signup", (nombre, email) => {
 
 Cypress.Commands.add("Login", (email,password) => {
 
+    // const email = Cypress.env("email");
+    // const password = Cypress.env("password")
+
     cy.get("[href='/login']").click()
         cy.get("[data-qa='login-email']").type(email)
         cy.get("[data-qa='login-password']").should("be.visible").type(password)

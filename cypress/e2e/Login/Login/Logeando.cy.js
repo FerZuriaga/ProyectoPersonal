@@ -14,7 +14,10 @@ describe("Seccion Login", () => {
     it("Logear en la pagina", () => {
 
 
-        cy.Login ("pedrillo@gmail.com", "holapaola")
+        const email = Cypress.env("email");
+        const password = Cypress.env("password")
+        
+        cy.Login(email, password)
 
         // cy.get("[href='/login']").click()
         // cy.get("[data-qa='login-email']").type("pedrillo@gmail.com")

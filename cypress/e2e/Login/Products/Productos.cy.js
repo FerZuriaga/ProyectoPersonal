@@ -62,7 +62,12 @@ describe("Seccion Productos", () => {
 
     it("Corroborar la subscripcion", () => {
 
-        cy.Login("pedrillo@gmail.com", "holapaola")
+        const email = Cypress.env("email");
+        const password = Cypress.env("password")
+        
+        cy.Login(email, password)
+
+        
         cy.contains("Products").click()
         cy.get("h2").should("contain.text", "All Products")
         cy.get(".features_items").should("be.visible")
