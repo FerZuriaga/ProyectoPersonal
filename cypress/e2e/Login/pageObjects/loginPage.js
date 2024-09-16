@@ -21,7 +21,8 @@ class LoginPage {
     }
 
     login(email, password) {
-       // this.visit(); // Navegar a la página de login
+        //this.visit(); // Navegar a la página de login
+        cy.get("[href='/login']").click()
         this.fillEmail(email); // Ingresar el email
         this.fillPassword(password); // Ingresar la contraseña
         this.submit(); // Enviar el formulario
