@@ -21,7 +21,11 @@ class CartPage {
         })
     }
 
-    realizarPago(){
+    eliminarProductoDelCarrito() {
+        cy.get('.cart_quantity_delete').click();  // Seleccionar el botón de eliminar producto
+    }
+
+    realizarPago() {
         cy.get(':nth-child(7) > .btn').click()
 
         cy.get("[name='name_on_card']").type("Galicia")
@@ -31,6 +35,14 @@ class CartPage {
         cy.get("[data-qa='expiry-year']").type("2040")
         cy.get("[data-qa='pay-button']").click()
     }
+
+    verificarProductoEnCarrito(nombreProducto) {
+        cy.get('.cart_info').should('contain.text', nombreProducto)
+    }
+
+    verificarCarritoVacio() {
+        cy.get('.cart_info').should('not.contain.text', 'Producto');
+    }
 }
 
-export default new CartPage()
+export default CartPage
